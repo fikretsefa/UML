@@ -1,0 +1,31 @@
+@startuml
+left to right direction
+actor Öğrenci as A1
+actor Ziyaretçi as A2
+
+
+
+package Tez_Websitesi{
+  usecase "Mezun Sorgusu" as UC1
+  usecase "Tez Yükleme İsteği" as UC2
+  usecase "Tez İşlemleri" as UC3
+  usecase "Öğrenci Bilgileri" as UC4
+  usecase "Profil Bilgileri" as UC5
+  usecase "Kullanıcı Ayarları" as UC6
+  usecase "Erişim İzinleri" as UC7
+
+}
+
+
+A1 --> UC4
+A1 --> UC1
+A1 --> UC5
+UC1 .> UC2 : include : evet
+UC1 .> UC3 : include : hayır
+UC2 --> UC3 : onaylı
+UC6 .> UC5 : extends
+UC7 .> UC5 : extends
+
+
+A2 -> A1
+@enduml

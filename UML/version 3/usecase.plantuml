@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+actor Yönetici as A1
+
+
+
+package Tez_Yönetim_Websitesi{
+  usecase "Görüşme Günceleme" as UC1
+  usecase "Görüşmeye Çağır" as UC2
+  usecase "İletişim" as UC3
+  usecase "Mezun Tez Güncelleme" as UC4
+  usecase "Tez Bilgileri Güncelleme" as UC5
+  usecase "Öğrenci İşlemleri" as UC6
+  usecase "Öğrenci Ekleme" as UC7
+  usecase "Öğrenci Silme" as UC8
+  usecase "Öğrenci Güncelleme" as UC9
+
+}
+
+A1 --> UC6
+A1 --> UC1
+UC1 .> UC2 : include
+A1 --> UC3
+UC2 --> UC3
+UC3 --> UC4
+A1 --> UC5
+UC7 --> UC6
+UC8 --> UC6
+UC9 --> UC6
+@enduml

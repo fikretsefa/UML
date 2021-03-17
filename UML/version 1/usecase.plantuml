@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+actor Ziyaretçi as z
+
+package Tez_Websitesi{
+  usecase "Tez Sosyal İşlemleri" as UC1
+  usecase "Tez Beğenme" as UC2
+  usecase "Tez Yorum Yapma" as UC3
+  usecase "Arama İşlemleri" as UC4
+  usecase "Full-Text Arama" as UC5
+  usecase "Filtre Arama" as UC6
+  usecase "İndirme" as UC7
+  usecase "İzin Sorgulama" as UC8
+  usecase "İzin İstekte Bulunma" as UC9
+
+}
+
+UC2 --|> UC1
+UC3 --|> UC1
+UC5 --|> UC4
+UC6 --|> UC4
+UC7 .> UC8 : include
+UC9 .> UC7 : extends
+
+z --> UC1
+z --> UC4
+z --> UC7
+@enduml
